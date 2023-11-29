@@ -32,6 +32,7 @@ services:
       - DJANGO_MYSQL_HOST=db
       - DJANGO_MYSQL_PORT=3306
       - DJANGO_REDIS_URL=redis:6379
+      - DJANGO_DEBUG=True
     links:
       - db
       - redis
