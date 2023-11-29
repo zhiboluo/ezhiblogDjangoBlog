@@ -11,13 +11,17 @@ docker pull liangliangyy/djangoblog:latest
 docker run -d  -p 8000:8000 -e DJANGO_MYSQL_HOST=mysqlhost -e DJANGO_MYSQL_PASSWORD=mysqlrootpassword -e DJANGO_MYSQL_USER=root -e DJANGO_MYSQL_DATABASE=djangoblog --name djangoblog liangliangyy/djangoblog:latest
 ```
 启动完成后，访问 http://127.0.0.1:8000 
-## 使用docker-compose
-如果你没有mysql等基础服务，那么可以使用`docker-compose`来运行，
+## 使用docker compose
+如果你没有mysql等基础服务，那么可以使用`docker compose`来运行，
 具体命令如下所示:
 ```shell
-docker-compose build
-docker-compose up -d
+docker compose build
+docker compose up -d
 ```
+Note: 
+- After all the container have been started, double check the logs of djangoblog container (`docker compose logs djangoblog`), make sure it has been successfully connected to 'db' database;
+- After the djangoblog container started, you may need to manually create the superuser using the command: `docker compose exec -it djangoblog python /code/djangoblog/manage.py createsuperuser`
+
 本方式生成的mysql数据文件在 `bin/datas/mysql` 文件夹。  
 等启动完成后，访问 [http://127.0.0.1](http://127.0.0.1) 即可。
 ### 使用es
