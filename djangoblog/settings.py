@@ -147,7 +147,7 @@ LOCALE_PATHS = (
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
@@ -210,7 +210,7 @@ if os.environ.get("DJANGO_REDIS_URL"):
 
 SITE_ID = 1
 BAIDU_NOTIFY_URL = os.environ.get('DJANGO_BAIDU_NOTIFY_URL') \
-                   or 'http://data.zz.baidu.com/urls?site=https://www.lylinux.net&token=1uAOGrMsUm5syDGn'
+                   or 'http://data.zz.baidu.com/urls?site=http://ezhiblog.top&token=1uAOGrMsUm5syDGn'
 
 # Email:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -226,7 +226,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 ADMINS = [('admin', os.environ.get('DJANGO_ADMIN_EMAIL') or 'admin@admin.com')]
 # WX ADMIN password(Two times md5)
 WXADMIN = os.environ.get(
-    'DJANGO_WXADMIN_PASSWORD') or '995F03AC401D6CABABAEF756FC4D43C7'
+    'DJANGO_WXADMIN_PASSWORD') or '995F03AC401CD6ABABAEF756FC4D43C7'
 
 LOG_PATH = os.path.join(BASE_DIR, 'logs')
 if not os.path.exists(LOG_PATH):
